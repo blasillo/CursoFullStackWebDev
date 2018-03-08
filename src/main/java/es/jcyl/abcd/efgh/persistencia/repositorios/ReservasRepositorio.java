@@ -1,0 +1,13 @@
+package es.jcyl.abcd.efgh.persistencia.repositorios;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
+
+import es.jcyl.abcd.efgh.persistencia.entidades.Reserva;
+
+@Repository
+@RepositoryRestResource (path="/reservas")
+public interface ReservasRepositorio extends JpaRepository<Reserva, Integer> {
+
+}

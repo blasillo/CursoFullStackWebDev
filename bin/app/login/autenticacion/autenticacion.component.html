@@ -1,0 +1,14 @@
+<p>
+  Inicio de sesi&oacute;n :
+  <br>
+  {{usuario}} - {{sesion}}
+  <br>
+  <input type="text" #usuarioForm>
+  <br>
+  <input type="password" #contrasenaForm>
+  <br>
+  <button (click)="login(usuarioForm.value, contrasenaForm.value)">Iniciar sesi&oacute;n</button>
+  <br>
+  
+  Errores: {{errores}}
+</p>
