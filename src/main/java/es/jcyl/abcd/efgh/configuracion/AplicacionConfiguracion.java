@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories("es.jcyl.abcd.efgh.persistencia")
 @EnableTransactionManagement
 @ComponentScan ("es.jcyl.abcd.efgh.persistencia")
-public class DatosConfiguracion {
+public class AplicacionConfiguracion {
 	
 	
 

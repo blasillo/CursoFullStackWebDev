@@ -1,37 +1,16 @@
 package es.jcyl.abcd.efgh;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
-import org.hibernate.Hibernate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.*;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.domain.Sort.Order;
+import org.springframework.context.annotation.Import;
 
-import es.jcyl.abcd.efgh.persistencia.entidades.Edificio;
-import es.jcyl.abcd.efgh.persistencia.entidades.Poblacion;
-import es.jcyl.abcd.efgh.persistencia.entidades.Provincia;
-import es.jcyl.abcd.efgh.persistencia.entidades.Reserva;
-import es.jcyl.abcd.efgh.persistencia.entidades.Sala;
-import es.jcyl.abcd.efgh.persistencia.entidades.TipoSala;
-import es.jcyl.abcd.efgh.persistencia.entidades.TipoVia;
-import es.jcyl.abcd.efgh.persistencia.repositorios.PoblacionesRepositorio;
-import es.jcyl.abcd.efgh.persistencia.repositorios.ProvinciasRepositorio;
-import es.jcyl.abcd.efgh.persistencia.repositorios.TipoSalaRepositorio;
-import es.jcyl.abcd.efgh.servicios.EdificiosServicio;
-import es.jcyl.abcd.efgh.servicios.ReservasServicio;
-import es.jcyl.abcd.efgh.servicios.SalasServicio;
-import es.jcyl.abcd.efgh.servicios.TipoSalaServicio;
-import es.jcyl.abcd.efgh.utiles.JpaUtiles;
+import es.jcyl.abcd.efgh.configuracion.AplicacionConfiguracion;
+
 
 @SpringBootApplication
+@Import ({AplicacionConfiguracion.class})
 public class FullstackwebdevApplication {
 	
 
