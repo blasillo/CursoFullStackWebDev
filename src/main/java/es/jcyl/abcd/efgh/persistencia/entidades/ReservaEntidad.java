@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table (name="RESERVAS")
-public class Reserva {
+public class ReservaEntidad {
 	
 	
 	@Id
@@ -17,7 +17,7 @@ public class Reserva {
 	
 	@ManyToOne ( fetch = FetchType.EAGER)
 	@JoinColumn (name="SALA_ID")
-	private Sala sala;
+	private SalaEntidad sala;
 	
 	@Temporal(value = TemporalType.DATE )
 	@Column ( name = "FEC_RESERVA" , nullable=false)
@@ -28,7 +28,7 @@ public class Reserva {
 
 	
 	
-	public Reserva() {
+	public ReservaEntidad() {
 		super();
 	}
 
@@ -40,11 +40,11 @@ public class Reserva {
 		this.reservaId = reservaId;
 	}
 
-	public Sala getSala() {
+	public SalaEntidad getSala() {
 		return sala;
 	}
 
-	public void setSala(Sala sala) {
+	public void setSala(SalaEntidad sala) {
 		this.sala = sala;
 	}
 

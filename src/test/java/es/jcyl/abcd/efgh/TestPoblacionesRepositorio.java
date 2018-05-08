@@ -20,8 +20,8 @@ import org.springframework.data.domain.Sort.Order;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import es.jcyl.abcd.efgh.persistencia.entidades.Poblacion;
-import es.jcyl.abcd.efgh.persistencia.entidades.Provincia;
+import es.jcyl.abcd.efgh.persistencia.entidades.PoblacionEntidad;
+import es.jcyl.abcd.efgh.persistencia.entidades.ProvinciaEntidad;
 import es.jcyl.abcd.efgh.persistencia.repositorios.*;
 
 @SpringBootTest
@@ -41,10 +41,10 @@ public class TestPoblacionesRepositorio {
 	@Test
 	public void testBusquedaPorPoblacion () throws Exception {
 		
-		Provincia prov =  repoProv.findOne( 40 );
+		ProvinciaEntidad prov =  repoProv.findOne( 40 );
 		assertNotNull (prov);
 		
-		Page<Poblacion> pagina = repo.findByProvinciaAndPoblacionStartingWithIgnoreCase(prov, "val", 
+		Page<PoblacionEntidad> pagina = repo.findByProvinciaAndPoblacionStartingWithIgnoreCase(prov, "val", 
 				new PageRequest(0,5, new Sort(new Order (Direction.DESC, "poblacion") )));
 		
 		assertNotNull (pagina);
@@ -56,7 +56,7 @@ public class TestPoblacionesRepositorio {
 		
 		assertEquals ( pagina.getContent().get(0).getPoblacion(),"Valverde de Campos");
 		
-		for ( Poblacion po :  pagina ) {
+		for ( PoblacionEntidad po :  pagina ) {
 		    System.out.println( po.getProvincia().getProvincia() + " / " + po.getPoblacion());
 		}
 		

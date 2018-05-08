@@ -6,14 +6,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
-import es.jcyl.abcd.efgh.persistencia.entidades.Provincia;
+import es.jcyl.abcd.efgh.persistencia.entidades.ProvinciaEntidad;
 
 
 @Repository
-@RepositoryRestResource (collectionResourceRel="provincias", path="provincias")
-public interface ProvinciasRepositorio extends SoloLecturaRepositorio <Provincia, Integer> {
+public interface ProvinciasRepositorio extends SoloLecturaRepositorio <ProvinciaEntidad, Integer> {
 	
-	public List<Provincia> findByProvinciaStartingWithIgnoreCase ( @Param ("prov") String prov ); 
+	public List<ProvinciaEntidad> findByProvinciaStartingWithIgnoreCase ( @Param ("prov") String prov ); 
 	
 
 }

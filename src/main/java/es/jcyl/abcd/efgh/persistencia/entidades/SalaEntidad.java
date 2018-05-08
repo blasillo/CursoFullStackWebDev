@@ -16,9 +16,9 @@ import org.springframework.data.jpa.repository.Query;
 @Entity
 @Table (name="SALAS")
 
-@NamedQuery (name="Sala.buscarPorCapacidad" , query="select s from Sala s where s.capacidad >= :capacidad")
+@NamedQuery (name="SalaEntidad.buscarPorCapacidad" , query="select s from SalaEntidad s where s.capacidad >= :capacidad")
 
-public class Sala {
+public class SalaEntidad {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -39,25 +39,25 @@ public class Sala {
     
 	@ManyToOne ( fetch=FetchType.EAGER)
 	@JoinColumn(name="TIPO_ID")
-    private TipoSala tipoSala;
+    private TipoSalaEntidad tipoSala;
 	
 	
 	@ManyToOne ( fetch=FetchType.EAGER)
 	@JoinColumn(name="EDIFICIO_ID")
-	private Edificio edificio;
+	private EdificioEntidad edificio;
 
-	public Sala() { }
+	public SalaEntidad() { }
 	
 	
-	public Sala(Integer salaId, String nombre) {
+	public SalaEntidad(Integer salaId, String nombre) {
 		super();
 		this.salaId = salaId;
 		this.nombre = nombre;
 	}
 	
 
-	public Sala(Integer salaId, String nombre, String descripcion, Integer capacidad, String localizacion,
-			TipoSala tipoSala) {
+	public SalaEntidad(Integer salaId, String nombre, String descripcion, Integer capacidad, String localizacion,
+			TipoSalaEntidad tipoSala) {
 		super();
 		this.salaId = salaId;
 		this.nombre = nombre;
@@ -110,23 +110,23 @@ public class Sala {
 		this.localizacion = localizacion;
 	}
 
-	public TipoSala getTipoSala() {
+	public TipoSalaEntidad getTipoSala() {
 		return tipoSala;
 	}
 
-	public void setTipoSala(TipoSala tipoSala) {
+	public void setTipoSala(TipoSalaEntidad tipoSala) {
 		this.tipoSala = tipoSala;
 	}
 	
 	
 
 
-	public Edificio getEdificio() {
+	public EdificioEntidad getEdificio() {
 		return edificio;
 	}
 
 
-	public void setEdificio(Edificio edificio) {
+	public void setEdificio(EdificioEntidad edificio) {
 		this.edificio = edificio;
 	}
 

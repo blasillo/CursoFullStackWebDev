@@ -15,7 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import es.jcyl.abcd.efgh.persistencia.entidades.Provincia;
+import es.jcyl.abcd.efgh.persistencia.entidades.ProvinciaEntidad;
 import es.jcyl.abcd.efgh.persistencia.repositorios.ProvinciasRepositorio;
 
 @SpringBootTest
@@ -33,7 +33,7 @@ public class TestProvinciasRepositorio {
 	@Test
 	public void testBusquedasPorNombre () throws Exception {
 		
-		List<Provincia> provincias = repo.findByProvinciaStartingWithIgnoreCase ("vall");
+		List<ProvinciaEntidad> provincias = repo.findByProvinciaStartingWithIgnoreCase ("vall");
 		assertNotNull ( provincias);
 		assertEquals ( 1, provincias.size() );
 		

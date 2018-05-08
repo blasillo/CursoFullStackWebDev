@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table ( name="TIPOS_SALAS" )
-public class TipoSala {
+public class TipoSalaEntidad {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -25,14 +25,14 @@ public class TipoSala {
 	private String tipo;
 	
 	@OneToMany (fetch=FetchType.LAZY, mappedBy="tipoSala")
-	private List<Sala> salas;
+	private List<SalaEntidad> salas;
 	
 
-	public TipoSala() {
+	public TipoSalaEntidad() {
 		super();
 	}
 
-	public TipoSala(Integer tipoSalaId, String tipo) {
+	public TipoSalaEntidad(Integer tipoSalaId, String tipo) {
 		super();
 		this.tipoSalaId = tipoSalaId;
 		this.tipo = tipo;
@@ -62,11 +62,11 @@ public class TipoSala {
 		this.tipo = tipo;
 	}
 
-	public List<Sala> getSalas() {
+	public List<SalaEntidad> getSalas() {
 		return salas;
 	}
 
-	public void setSalas(List<Sala> salas) {
+	public void setSalas(List<SalaEntidad> salas) {
 		this.salas = salas;
 	}
 

@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import es.jcyl.abcd.efgh.persistencia.entidades.TipoSala;
+import es.jcyl.abcd.efgh.persistencia.entidades.TipoSalaEntidad;
 
 @Repository
-public interface TipoSalaRepositorio extends SoloLecturaRepositorio <TipoSala, Integer> {
+public interface TipoSalaRepositorio extends SoloLecturaRepositorio <TipoSalaEntidad, Integer> {
 	
-	public List<TipoSala> findByTipo (String n);
+	public List<TipoSalaEntidad> findByTipo (String n);
 	
-	public List<TipoSala> findByTipoContainingIgnoreCase (String n);
+	public List<TipoSalaEntidad> findByTipoContainingIgnoreCase (String n);
 
 }

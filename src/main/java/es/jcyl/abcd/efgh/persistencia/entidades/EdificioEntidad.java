@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="EDIFICIOS")
-public class Edificio {
+public class EdificioEntidad {
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY)
 	@Column (name = "EDIFICIO_ID", updatable=false)
@@ -19,14 +19,14 @@ public class Edificio {
     private String titularidad;
 	
 	@Embedded
-    private Direccion direccion;
+    private DireccionEntidad direccion;
 	
 
-	public Edificio() {
+	public EdificioEntidad() {
 		super();
 	}
 
-	public Edificio(Integer edificioId, String nombre, String titularidad, Direccion direccion) {
+	public EdificioEntidad(Integer edificioId, String nombre, String titularidad, DireccionEntidad direccion) {
 		super();
 		this.edificioId = edificioId;
 		this.nombre = nombre;
@@ -58,11 +58,11 @@ public class Edificio {
 		this.titularidad = titularidad;
 	}
 
-	public Direccion getDireccion() {
+	public DireccionEntidad getDireccion() {
 		return direccion;
 	}
 
-	public void setDireccion(Direccion direccion) {
+	public void setDireccion(DireccionEntidad direccion) {
 		this.direccion = direccion;
 	}
 

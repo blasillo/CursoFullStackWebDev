@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import es.jcyl.abcd.efgh.persistencia.entidades.Reserva;
-import es.jcyl.abcd.efgh.persistencia.entidades.Sala;
+import es.jcyl.abcd.efgh.persistencia.entidades.ReservaEntidad;
+import es.jcyl.abcd.efgh.persistencia.entidades.SalaEntidad;
 import es.jcyl.abcd.efgh.persistencia.repositorios.ReservasRepositorio;
 
 @Service
@@ -17,23 +17,23 @@ public class ReservasServicio {
 	private ReservasRepositorio repo;
 	
 	
-	public List<Reserva> todos() {
-		return (List<Reserva>) this.repo.findAll();
+	public List<ReservaEntidad> todos() {
+		return (List<ReservaEntidad>) this.repo.findAll();
 	}
 	
-	public Reserva buscarPorId ( int id ) {
+	public ReservaEntidad buscarPorId ( int id ) {
 		return this.repo.findOne( new Integer (id));
 	}
 	
-	public void guardar ( Reserva r ) {
+	public void guardar ( ReservaEntidad r ) {
 		this.repo.save( r );
 	}
 	
-	public void actualizar ( Reserva s ) {
+	public void actualizar ( ReservaEntidad s ) {
 		this.repo.save( s );
 	}
 	
-	public void borrar ( Reserva s) {
+	public void borrar ( ReservaEntidad s) {
 		this.repo.delete( s );
 	}
 	

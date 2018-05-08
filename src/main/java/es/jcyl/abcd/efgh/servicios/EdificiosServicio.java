@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import es.jcyl.abcd.efgh.persistencia.entidades.Edificio;
-import es.jcyl.abcd.efgh.persistencia.entidades.Sala;
+import es.jcyl.abcd.efgh.persistencia.entidades.EdificioEntidad;
+import es.jcyl.abcd.efgh.persistencia.entidades.SalaEntidad;
 import es.jcyl.abcd.efgh.persistencia.entidades.TipoVia;
 import es.jcyl.abcd.efgh.persistencia.repositorios.EdificiosRepositorio;
 
@@ -17,41 +17,41 @@ public class EdificiosServicio {
 	private EdificiosRepositorio repo;
 	
 	
-	public void guardar ( Edificio e ) {
+	public void guardar ( EdificioEntidad e ) {
 		this.repo.save( e );
 	}
 	
-	public void guardar ( List<Edificio> e ) {
+	public void guardar ( List<EdificioEntidad> e ) {
 		this.repo.save( e );
 	}
 	
 	
-	public void actualizar ( Edificio e ) {
+	public void actualizar ( EdificioEntidad e ) {
 		this.repo.save( e );
 	}
 	
-	public void borrar ( Edificio e) {
+	public void borrar ( EdificioEntidad e) {
 		this.repo.delete( e.getEdificioId() );
 	}
 	
 	
-	public List<Edificio> todos() {
-		return (List<Edificio>) this.repo.findAll();
+	public List<EdificioEntidad> todos() {
+		return (List<EdificioEntidad>) this.repo.findAll();
 	}
 	
-	public Edificio buscarPorId ( int id ) {
+	public EdificioEntidad buscarPorId ( int id ) {
 		return this.repo.findOne( new Integer (id));
 	}
 	
-	public List<Edificio> buscarPorDireccion ( String c) {
+	public List<EdificioEntidad> buscarPorDireccion ( String c) {
 		return this.repo.findByDireccionNombreViaContainsIgnoreCase( c );
 	}
 	
-	public List<Edificio> buscarPorTipoVia ( TipoVia tv ) {
+	public List<EdificioEntidad> buscarPorTipoVia ( TipoVia tv ) {
 		return this.repo.findByDireccionTipoVia(tv);
 	}
 	
-	public List<Edificio> buscarPorProvincia ( String prov ) {
+	public List<EdificioEntidad> buscarPorProvincia ( String prov ) {
 		return this.repo.buscarPorProvincia(prov);
 	}
 

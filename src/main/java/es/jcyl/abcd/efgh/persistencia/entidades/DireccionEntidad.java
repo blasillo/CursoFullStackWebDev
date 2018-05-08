@@ -16,7 +16,7 @@ import es.jcyl.abcd.efgh.persistencia.conversores.TipoViaConversor;
 
 @Embeddable
 @Access ( AccessType.FIELD )
-public class Direccion {
+public class DireccionEntidad {
 	
 	@Column (name="COD_VIA", length=2)
 	@Convert (converter = TipoViaConversor.class)
@@ -34,7 +34,7 @@ public class Direccion {
     
     @ManyToOne ( fetch = FetchType.EAGER)
     @JoinColumn (name = "ID_POBLACION")
-    private Poblacion poblacion;
+    private PoblacionEntidad poblacion;
 
     
     
@@ -79,12 +79,12 @@ public class Direccion {
 	}
 
 
-	public Poblacion getPoblacion() {
+	public PoblacionEntidad getPoblacion() {
 		return poblacion;
 	}
 
 
-	public void setPoblacion(Poblacion poblacion) {
+	public void setPoblacion(PoblacionEntidad poblacion) {
 		this.poblacion = poblacion;
 	}
     

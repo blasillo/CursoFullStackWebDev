@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import es.jcyl.abcd.efgh.persistencia.entidades.TipoSala;
+import es.jcyl.abcd.efgh.persistencia.entidades.TipoSalaEntidad;
 import es.jcyl.abcd.efgh.persistencia.repositorios.TipoSalaRepositorio;
 
 @Service
@@ -16,16 +16,16 @@ public class TipoSalaServicio {
 	
 	
 	
-	public void guardar ( TipoSala s ) {
+	public void guardar ( TipoSalaEntidad s ) {
 		//this.repo.save( s );
 	}
 	
-	public List<TipoSala> todos() {
-		return (List<TipoSala>) this.repo.findAll();
+	public List<TipoSalaEntidad> todos() {
+		return (List<TipoSalaEntidad>) this.repo.findAll();
 	}
 	
 	
-	public List<TipoSala> buscarPorTipo(String tipo) {
-		return (List<TipoSala>) this.repo.findByTipoContainingIgnoreCase(tipo);
+	public List<TipoSalaEntidad> buscarPorTipo(String tipo) {
+		return (List<TipoSalaEntidad>) this.repo.findByTipoContainingIgnoreCase(tipo);
 	}
 }

@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="PROVINCIA")
-public class Provincia {
+public class ProvinciaEntidad {
 	@Id
 	@Column (name="IDPROVINCIA", updatable=false, unique=true, nullable=false)
 	@Basic(optional = false)
@@ -16,7 +16,7 @@ public class Provincia {
 	private String provincia;
 
 
-	public Provincia() {
+	public ProvinciaEntidad() {
 		super();
 	}
 

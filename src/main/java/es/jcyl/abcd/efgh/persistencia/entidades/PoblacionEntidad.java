@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "POBLACION")
-public class Poblacion {
+public class PoblacionEntidad {
 	
 	@Id
 	@Column ( name = "idpoblacion", updatable = false)
@@ -22,9 +22,9 @@ public class Poblacion {
 	
 	@ManyToOne ( fetch = FetchType.EAGER )
 	@JoinColumn(name="idprovincia")
-    private Provincia provincia;
+    private ProvinciaEntidad provincia;
 
-	public Poblacion() {
+	public PoblacionEntidad() {
 		super();
 	}
 
@@ -60,11 +60,11 @@ public class Poblacion {
 		this.longitud = longitud;
 	}
 
-	public Provincia getProvincia() {
+	public ProvinciaEntidad getProvincia() {
 		return provincia;
 	}
 
-	public void setProvincia(Provincia provincia) {
+	public void setProvincia(ProvinciaEntidad provincia) {
 		this.provincia = provincia;
 	}
     

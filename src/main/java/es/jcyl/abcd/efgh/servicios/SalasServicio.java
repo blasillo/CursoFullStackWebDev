@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import es.jcyl.abcd.efgh.persistencia.entidades.Sala;
-import es.jcyl.abcd.efgh.persistencia.entidades.TipoSala;
+import es.jcyl.abcd.efgh.persistencia.entidades.SalaEntidad;
+import es.jcyl.abcd.efgh.persistencia.entidades.TipoSalaEntidad;
 import es.jcyl.abcd.efgh.persistencia.repositorios.SalasRepositorio;
 import es.jcyl.abcd.efgh.persistencia.repositorios.TipoSalaRepositorio;
 
@@ -18,33 +18,33 @@ public class SalasServicio {
 	private SalasRepositorio repo;
 	
 	
-	public void guardar ( Sala s ) {
+	public void guardar ( SalaEntidad s ) {
 		this.repo.save( s );
 	}
 	
-	public void guardar ( List<Sala> s ) {
+	public void guardar ( List<SalaEntidad> s ) {
 		this.repo.save( s );
 	}
 	
 	
-	public void actualizar ( Sala s ) {
+	public void actualizar ( SalaEntidad s ) {
 		this.repo.save( s );
 	}
 	
-	public void borrar ( Sala s) {
+	public void borrar ( SalaEntidad s) {
 		this.repo.delete( s.getSalaId() );
 	}
 	
 	
-	public List<Sala> todos() {
-		return (List<Sala>) this.repo.findAll();
+	public List<SalaEntidad> todos() {
+		return (List<SalaEntidad>) this.repo.findAll();
 	}
 	
-	public Sala buscarPorId ( int id ) {
+	public SalaEntidad buscarPorId ( int id ) {
 		return this.repo.findOne( new Integer (id));
 	}
 	
-	public List<Sala> buscarPorCapacidad (int c) {
+	public List<SalaEntidad> buscarPorCapacidad (int c) {
 		return this.repo.buscarPorCapacidad( c );
 	}
 	
