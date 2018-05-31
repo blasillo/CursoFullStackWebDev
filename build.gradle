@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.10.RELEASE'
+		springBootVersion = '2.0.2.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -16,7 +16,7 @@ apply plugin: 'org.springframework.boot'
 
 group = 'es.jcyl.abcd.efgh'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
