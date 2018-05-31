@@ -6,24 +6,24 @@ import javax.persistence.*;
 
 
 @Entity
-@Table (name="RESERVAS")
+//@Table (name="RESERVAS")
 public class ReservaEntidad {
 	
 	
-	@Id
-	@GeneratedValue ( strategy=GenerationType.IDENTITY )
-	@Column ( name = "RESERVA_ID", updatable = false, insertable = false)
+//	@Id
+//	@GeneratedValue ( strategy=GenerationType.IDENTITY )
+//	@Column ( name = "RESERVA_ID", updatable = false, insertable = false)
 	private Integer reservaId;
 	
-	@ManyToOne ( fetch = FetchType.EAGER)
-	@JoinColumn (name="SALA_ID")
+//	@ManyToOne ( fetch = FetchType.EAGER)
+//	@JoinColumn (name="SALA_ID")
 	private SalaEntidad sala;
 	
-	@Temporal(value = TemporalType.DATE )
-	@Column ( name = "FEC_RESERVA" , nullable=false)
+//	@Temporal(value = TemporalType.DATE )
+//	@Column ( name = "FEC_RESERVA" , nullable=false)
 	private Date fechaReserva;
 	
-	@Column ( name ="USUARIO", length=15, nullable=false)
+//	@Column ( name ="USUARIO", length=15, nullable=false)
 	private String usuario;
 
 	
