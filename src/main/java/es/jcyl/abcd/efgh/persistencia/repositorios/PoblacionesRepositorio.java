@@ -15,9 +15,4 @@ import es.jcyl.abcd.efgh.persistencia.entidades.ProvinciaEntidad;
 public interface PoblacionesRepositorio extends SoloLecturaRepositorio <PoblacionEntidad, Integer> {
 	
 	
-//	public List<PoblacionEntidad> findTop5ByProvinciaOrderByPoblacionAsc (ProvinciaEntidad p);
-//	
-//	public List<PoblacionEntidad> findTop5ByProvinciaAndPoblacionStartingWithIgnoreCase (ProvinciaEntidad p, String pop);
-//	
-//	public Page<PoblacionEntidad> findByProvinciaAndPoblacionStartingWithIgnoreCase (ProvinciaEntidad p, String pop, Pageable pagina);
 }

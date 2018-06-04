@@ -5,25 +5,25 @@ import java.util.Date;
 import javax.persistence.*;
 
 
-@Entity
-//@Table (name="RESERVAS")
+//@Entity
+//TODO
 public class ReservaEntidad {
 	
 	
-//	@Id
-//	@GeneratedValue ( strategy=GenerationType.IDENTITY )
-//	@Column ( name = "RESERVA_ID", updatable = false, insertable = false)
+//	TODO
+//	TODO
+//	TODO
 	private Integer reservaId;
 	
-//	@ManyToOne ( fetch = FetchType.EAGER)
-//	@JoinColumn (name="SALA_ID")
+//	TODO
+//	TODO
 	private SalaEntidad sala;
 	
-//	@Temporal(value = TemporalType.DATE )
-//	@Column ( name = "FEC_RESERVA" , nullable=false)
+//	TODO
+//	TODO
 	private Date fechaReserva;
 	
-//	@Column ( name ="USUARIO", length=15, nullable=false)
+//	TODO
 	private String usuario;
 
 	

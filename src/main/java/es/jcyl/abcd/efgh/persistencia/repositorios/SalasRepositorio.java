@@ -15,6 +15,6 @@ public interface SalasRepositorio extends JpaRepository <SalaEntidad, Integer> {
 	
 	
     
-	//public List<SalaEntidad> buscarPorCapacidad ( @Param ("capacidad") int capacidad);
+	
 
 } 
