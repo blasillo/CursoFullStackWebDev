@@ -25,17 +25,12 @@ public class TestProvinciasRepositorio {
 	
 	@Autowired
 	private ProvinciasRepositorio repo;
-	
-	@PersistenceContext
-	private EntityManager entityManager;
 
 	
 	@Test
 	public void testBusquedasPorNombre () throws Exception {
-		
 		List<ProvinciaEntidad> provincias = repo.findByProvinciaStartingWithIgnoreCase ("vall");
-		assertNotNull ( provincias);
-		assertEquals ( 1, provincias.size() );
-		
+		assertNotNull (provincias);
+		assertEquals ( 1, provincias.size() );	
 	}
 }

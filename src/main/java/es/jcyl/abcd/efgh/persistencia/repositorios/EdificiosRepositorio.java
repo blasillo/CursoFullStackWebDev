@@ -15,14 +15,20 @@ import es.jcyl.abcd.efgh.persistencia.entidades.*;
 @Repository
 public interface EdificiosRepositorio extends JpaRepository <EdificioEntidad, Integer> {
 	
-	public List<EdificioEntidad> findByDireccionNombreViaContainsIgnoreCase (@Param ("direccion")String direccion);
 	
-	public List<EdificioEntidad> findByDireccionTipoVia ( @Param ("tipoVia") TipoVia tipoVia );
+	//TODO: buscar los edificios por tipo de via y por nombre de via
+	public List<EdificioEntidad> findByDireccionTipoViaAndDireccionNombreViaContainsIgnoreCase ( @Param ("tipoVia") TipoVia tipoVia , @Param ("direccion")String direccion);
 	
 	
+	//TODO: buscar los edificios de una provincia
 	@Query ("select edif "
 			+ "from EdificioEntidad edif "
 			+ "left join edif.direccion.poblacion pob left join pob.provincia prov "
 			+ "where upper(prov.provincia) like concat ('%',concat(upper(:prov),'%'))")
 	public List<EdificioEntidad> buscarPorProvincia ( @Param ("prov") String prov );
+	
+	//TODO: bucar los edificios por nombre del edificio
+	public List<EdificioEntidad> findByNombreContainsIgnoreCase (@Param ("nombre") String nombre); 
+	
+	//TODO[opcional] buscar los edificios que tengan salas de cierta capacidad
 }

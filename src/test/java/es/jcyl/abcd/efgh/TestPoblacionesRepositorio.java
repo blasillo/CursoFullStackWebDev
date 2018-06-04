@@ -38,6 +38,22 @@ public class TestPoblacionesRepositorio {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
+	
+	@Test
+	public void testBusquedaPorProvincia () throws Exception {
+		
+		List<PoblacionEntidad> poblaciones = repo.findTop5ByProvinciaProvinciaStartingWithIgnoreCaseOrderByPoblacionAsc ("vall");
+		
+		assertNotNull (poblaciones);
+		
+		for ( PoblacionEntidad po :  poblaciones ) {
+			System.out.println( po.getProvincia().getProvincia() + " / " + po.getPoblacion());
+		}
+		
+		assertEquals ( poblaciones.size() , 5);
+		
+	}
+	
 	@Test
 	public void testBusquedaPorPoblacion () throws Exception {
 		
