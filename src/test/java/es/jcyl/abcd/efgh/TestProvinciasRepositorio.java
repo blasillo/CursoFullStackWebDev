@@ -5,8 +5,6 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,7 +1,7 @@
 package es.jcyl.abcd.efgh.persistencia.entidades;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+
 
 
 @Entity

@@ -30,5 +30,4 @@ public interface EdificiosRepositorio extends JpaRepository <EdificioEntidad, In
 	//TODO: bucar los edificios por nombre del edificio
 	public List<EdificioEntidad> findByNombreContainsIgnoreCase (@Param ("nombre") String nombre); 
 	
-	//TODO[opcional] buscar los edificios que tengan salas de cierta capacidad
 }
