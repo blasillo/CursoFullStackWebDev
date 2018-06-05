@@ -1,9 +1,11 @@
 package es.jcyl.abcd.efgh;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -57,11 +59,15 @@ public class TestPoblacionesRepositorio {
 	@Test
 	public void testBusquedaPorPoblacion () throws Exception {
 		
-		ProvinciaEntidad prov =  repoProv.findOne( 40 );
-		assertNotNull (prov);
-		
-		Page<PoblacionEntidad> pagina = repo.findByProvinciaAndPoblacionStartingWithIgnoreCase(prov, "val", 
-				new PageRequest(0,5, new Sort(new Order (Direction.DESC, "poblacion") )));
+		Optional<ProvinciaEntidad> prov =  repoProv.findById( 40 );
+
+        assertTrue (prov.isPresent());
+
+        Sort sort = new Sort(Direction.DESC, "poblacion");
+
+        PageRequest pageRequest = PageRequest.of(0, 5, sort);
+
+        Page<PoblacionEntidad> pagina = repo.findByProvinciaAndPoblacionStartingWithIgnoreCase(prov.get(), "val", pageRequest);
 		
 		assertNotNull (pagina);
 		assertEquals ( pagina.getSize() , 5);
