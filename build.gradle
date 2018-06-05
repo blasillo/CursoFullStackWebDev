@@ -1,34 +1,50 @@
-buildscript {
-	ext {
-		springBootVersion = '2.0.2.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+plugins {
+
+       id 'java'
+
+       id 'org.springframework.boot' version '2.0.2.RELEASE'
+
+       id 'io.spring.dependency-management' version "1.0.5.RELEASE"
+
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-
-group = 'es.jcyl.abcd.efgh'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
+ 
 
 repositories {
-	mavenCentral()
+
+       maven {
+
+         url "http://10.17.0.95:8081/repository/jcenter-nexus/"
+
+    }
+
+    jcenter()
+
 }
 
+ 
+
+group = 'es.jcyl.abcd.efgh'
+
+version = '0.0.2-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+ 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-data-rest')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	//
-    compile group: 'org.apache.derby', name: 'derbyclient', version: '10.11.1.1'
-	
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+       compile 'org.springframework.boot:spring-boot-starter-data-jpa',
+
+                    'org.springframework.boot:spring-boot-starter-web'
+
+                   
+
+       runtime 'org.apache.derby:derbyclient:10.14.1.0'
+
+      
+
+       testCompile 'org.springframework.boot:spring-boot-starter-test'
+
 }
+
