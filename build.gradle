@@ -12,6 +12,11 @@ plugins {
 
 repositories {
        
+   maven {
+
+         url "http://10.17.0.95:8081/repository/jcenter-nexus/"
+
+    }
        
     jcenter()
 
