@@ -13,7 +13,7 @@ import es.jcyl.abcd.efgh.configuracion.AplicacionConfiguracion;
 @Import ({AplicacionConfiguracion.class})
 public class FullstackwebdevApplication {
 	
-
+    @SuppressWarnings(value = { "unused" })
 	public static void main(String[] args) {
 		
 		ApplicationContext context = SpringApplication.run(FullstackwebdevApplication.class, args);
