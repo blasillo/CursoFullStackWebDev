@@ -16,6 +16,7 @@ public class FullstackwebdevApplication {
 
 	public static void main(String[] args) {
 		
+		@SuppressWarnings("unused")
 		ApplicationContext context = SpringApplication.run(FullstackwebdevApplication.class, args);
 		
 		

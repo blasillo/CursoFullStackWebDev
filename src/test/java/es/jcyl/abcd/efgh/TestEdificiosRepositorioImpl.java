@@ -21,6 +21,22 @@ public class TestEdificiosRepositorioImpl {
 	
 	@Autowired
 	private EdificiosRepositorio repo;
+	
+	@Test
+	public void testBuscarPorNombre() {
+		
+
+		List<EdificioEntidad> edificios = repo.buscarPorNombre("hospi");
+		
+		assertNotNull (edificios);
+		
+		for (EdificioEntidad edificio : edificios ) {
+			System.out.println( edificio );
+		}
+
+		assertTrue ( edificios.size() > 0);
+		
+	}
 
 	@Test
 	public void testBusquedaEdificiosSinSalas() {
@@ -35,6 +51,22 @@ public class TestEdificiosRepositorioImpl {
 		}
 
 		System.out.println("Fin");
+		
+	}
+	
+	@Test
+	public void testBuscarPorSalasConCapacidad() {
+		
+
+		List<EdificioEntidad> edificios = repo.buscarEdificiosConSalasYConCapacidad(100);
+		
+		assertNotNull (edificios);
+		
+		for (EdificioEntidad edificio : edificios ) {
+			System.out.println( edificio );
+		}
+
+		assertTrue ( edificios.size() > 0);
 		
 	}
 
