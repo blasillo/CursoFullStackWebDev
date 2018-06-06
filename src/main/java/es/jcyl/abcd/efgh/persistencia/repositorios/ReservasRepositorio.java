@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import es.jcyl.abcd.efgh.persistencia.entidades.ReservaEntidad;
 
 @Repository
-public interface ReservasRepositorio extends JpaRepository<ReservaEntidad, Integer> {
+public interface ReservasRepositorio extends JpaRepository<ReservaEntidad, Integer> , PersonalizadoReservasRepositorio {
 
 }
