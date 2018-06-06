@@ -11,7 +11,7 @@ import es.jcyl.abcd.efgh.persistencia.entidades.EdificioEntidad;
 import es.jcyl.abcd.efgh.persistencia.entidades.TipoVia;
 
 @Repository
-public interface EdificiosRepositorio extends JpaRepository <EdificioEntidad, Integer> {
+public interface EdificiosRepositorio extends JpaRepository <EdificioEntidad, Integer>, PersonalizadoEdificiosRepositorio {
 	
 	
 	//TODO: buscar los edificios por tipo de via y por nombre de via
