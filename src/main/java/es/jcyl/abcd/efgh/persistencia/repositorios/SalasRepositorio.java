@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import es.jcyl.abcd.efgh.persistencia.entidades.SalaEntidad;
 
 @Repository
-public interface SalasRepositorio extends JpaRepository <SalaEntidad, Integer> {
+public interface SalasRepositorio extends JpaRepository <SalaEntidad, Integer>, PersonalizadoSalasRepositorio {
 
 	//TODO: buscar salas por nombre del edificio 
 	public List<SalaEntidad> findByEdificioNombreContainsIgnoreCase (@Param ("nombre") String nombre);
