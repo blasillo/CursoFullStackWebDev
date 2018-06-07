@@ -76,7 +76,20 @@ public class TestSalasRepositorio {
 		
 		reservasRepo.save(  reserva );
 		
-		List<SalaEntidad> salas = repo.buscarDisponiblesPorFechaYCapacidad(fechaReserva, 11);
+		List<SalaEntidad> salas = null;
+		
+		try {				
+		   salas = repo.buscarDisponiblesPorFechaYCapacidad(fechaReserva, 11);
+		}
+		catch (Exception e) {}
+		finally {
+			reserva = reservasRepo.findFirstByFechaReservaIs(fechaReserva);		
+			reservasRepo.delete( reserva );
+		}
+		
+        
+		
+		
 		
 		assertNotNull (salas);
 		

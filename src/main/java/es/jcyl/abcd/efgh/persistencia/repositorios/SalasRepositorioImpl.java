@@ -42,16 +42,17 @@ public class SalasRepositorioImpl implements PersonalizadoSalasRepositorio {
 		subconsulta.where( builder.equal( reservaRoot.get("fechaReserva") , fecha) );
 		
 		
-		// 4. Anadir las condiciones a la consulta
+		// 4. Anadir las condiciones a la consulta 
 		
 		Predicate p1 = salaRoot.get("salaId").in(subconsulta).not();
 		
 		// TODO
-		Predicate p2 = null; 
+		//Predicate p2 = builder.greaterThan(salaRoot.get("capacidad"), minCapacidad) ;
+		Predicate  p2 = null;
 		
 		Predicate condicion = builder.and( p1, p2 );
 		
-		salas.where( p1  )
+		salas.where( condicion  )
 		     .select( salaRoot );
 		
 		// 5. Construir la TypedQuery usando el entityManager y la consulta
