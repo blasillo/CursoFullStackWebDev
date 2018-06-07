@@ -34,7 +34,7 @@ public class TestEdificiosRepositorioImpl {
 			System.out.println( edificio );
 		}
 
-		assertTrue ( edificios.size() > 0);
+		assertTrue ( edificios.size() == 1);
 		
 	}
 

@@ -36,7 +36,9 @@ public class EdificiosRepositorioImpl implements PersonalizadoEdificiosRepositor
 		
 		// 3. Definir condiciones (predicados) usando CriteriaBuilder
 		
-		Predicate condicion = builder.like( builder.upper( edificioRoot.get("nombre") ), "%" + nombre.toUpperCase() + "%" );
+		// TODO
+		//Predicate condicion = builder.like( builder.upper( edificioRoot.get("nombre") ), "%" + nombre.toUpperCase() + "%" );
+		Predicate condicion = null;
 		
 		// 4. Anadir las condiciones a la consulta
 		edificios.where( condicion ).select( edificioRoot );
