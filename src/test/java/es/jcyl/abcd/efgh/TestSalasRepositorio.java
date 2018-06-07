@@ -2,6 +2,7 @@ package es.jcyl.abcd.efgh;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -21,6 +22,9 @@ public class TestSalasRepositorio {
 	
 	@Autowired
 	private SalasRepositorio repo;
+	
+	@Autowired
+	private ReservasRepositorio reservasRepo;
 
 	@Test
 	public void testBusquedaPorNombreEdificio() {
@@ -56,6 +60,30 @@ public class TestSalasRepositorio {
 			System.out.println(sala);
 		}
 		assertTrue (salas.size() > 0);
+	}
+	
+	
+	@Test
+	public void testBusquedaPorCriteria() {
+		
+		Date fechaReserva = new Date();
+		
+		ReservaEntidad reserva = new ReservaEntidad();
+		reserva.setFechaReserva( fechaReserva );
+		reserva.setUsuario( "torgarbl" );
+		reserva.setSala(  repo.getOne ( 1 )  );
+		
+		
+		reservasRepo.save(  reserva );
+		
+		List<SalaEntidad> salas = repo.buscarDisponiblesPorFechaYCapacidad(fechaReserva, 11);
+		
+		assertNotNull (salas);
+		
+		for (SalaEntidad sala: salas) {
+			System.out.println(sala);
+		}
+		assertTrue (salas.size() == 1);
 	}
 	
 

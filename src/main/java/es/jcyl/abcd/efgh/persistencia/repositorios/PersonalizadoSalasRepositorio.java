@@ -7,6 +7,6 @@ import es.jcyl.abcd.efgh.persistencia.entidades.SalaEntidad;
 
 public interface PersonalizadoSalasRepositorio {
 	
-	public List<SalaEntidad> buscarDisponiblesPorFecha(Date fecha);
+	public List<SalaEntidad> buscarDisponiblesPorFechaYCapacidad(Date fecha , Integer minCapacidad );
 
 }
