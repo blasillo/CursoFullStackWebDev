@@ -73,8 +73,8 @@ public class TestSalasRepositorio {
 		reserva.setUsuario( "torgarbl" );
 		reserva.setSala(  repo.getOne ( 1 )  );
 		
+		reservasRepo.save( reserva );
 		
-		reservasRepo.save(  reserva );
 		
 		List<SalaEntidad> salas = null;
 		

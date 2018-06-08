@@ -42,6 +42,7 @@ public class SalasRepositorioImpl implements PersonalizadoSalasRepositorio {
 		subconsulta.where( builder.equal( reservaRoot.get("fechaReserva") , fecha) );
 		
 		
+		
 		// 4. Anadir las condiciones a la consulta 
 		
 		Predicate p1 = salaRoot.get("salaId").in(subconsulta).not();
