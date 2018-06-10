@@ -15,17 +15,11 @@ public interface EdificiosRepositorio extends JpaRepository <EdificioEntidad, In
 	
 	
 	//TODO: buscar los edificios por tipo de via y por nombre de via
-	public List<EdificioEntidad> findByDireccionTipoViaAndDireccionNombreViaContainsIgnoreCase ( @Param ("tipoVia") TipoVia tipoVia , @Param ("direccion")String direccion);
 	
-	
-	//TODO: buscar los edificios de una provincia
-	@Query ("select edif "
-			+ "from EdificioEntidad edif "
-			+ "left join edif.direccion.poblacion pob left join pob.provincia prov "
-			+ "where upper(prov.provincia) like concat ('%',concat(upper(:prov),'%'))")
+	//TODO: buscar los edificios de una provincia @Query
 	public List<EdificioEntidad> buscarPorProvincia ( @Param ("prov") String prov );
 	
-	//TODO: bucar los edificios por nombre del edificio
-	public List<EdificioEntidad> findByNombreContainsIgnoreCase (@Param ("nombre") String nombre); 
+	//TODO: buscar los edificios por nombre del edificio
+	
 	
 }

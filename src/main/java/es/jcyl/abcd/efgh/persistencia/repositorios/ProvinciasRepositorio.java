@@ -12,8 +12,8 @@ import es.jcyl.abcd.efgh.persistencia.entidades.ProvinciaEntidad;
 public interface ProvinciasRepositorio extends SoloLecturaRepositorio <ProvinciaEntidad, Integer> {
 	
 	
-	// TODO : consulta derivada provincias que comienzen por texto 
-	public List<ProvinciaEntidad> findByProvinciaStartingWithIgnoreCase ( @Param ("prov") String prov ); 
+	// TODO : consulta derivada provincias que comiencen por nombre 
+	
 
 
 }
