@@ -37,7 +37,6 @@ public class EdificiosRepositorioImpl implements PersonalizadoEdificiosRepositor
 		// 3. Definir condiciones (predicados) usando CriteriaBuilder
 		
 		// TODO
-		//Predicate condicion = builder.like( builder.upper( edificioRoot.get("nombre") ), "%" + nombre.toUpperCase() + "%" );
 		Predicate condicion = null;
 		
 		// 4. Anadir las condiciones a la consulta
@@ -51,25 +50,7 @@ public class EdificiosRepositorioImpl implements PersonalizadoEdificiosRepositor
 	
 
 	@Override
-	public List<EdificioEntidad> buscarEdificiosSinSalas() {
-		
-		/*
-		Metamodel model = entityManager.getMetamodel();
-		Set<EntityType<?>> entidades = model.getEntities();
-		for ( EntityType entidad : entidades ) {
-			
-			System.out.println( entidad.getName() );
-			
-			Set<Attribute> atributos = entidad.getAttributes();
-			
-			for (Attribute atributo : atributos ) {
-				System.out.println( atributo.getName() + " : " + atributo.getJavaType().getTypeName() + " [" + atributo.isAssociation() + "]" );
-			}
-				
-		}
-		
-		*/
-		
+	public List<EdificioEntidad> buscarEdificiosSinSalas() {	
 		
 		/*
 		   select e.*
@@ -142,6 +123,23 @@ public class EdificiosRepositorioImpl implements PersonalizadoEdificiosRepositor
 		return typedQuery.getResultList();
 	}
 
+	
+	/*
+	Metamodel model = entityManager.getMetamodel();
+	Set<EntityType<?>> entidades = model.getEntities();
+	for ( EntityType entidad : entidades ) {
+		
+		System.out.println( entidad.getName() );
+		
+		Set<Attribute> atributos = entidad.getAttributes();
+		
+		for (Attribute atributo : atributos ) {
+			System.out.println( atributo.getName() + " : " + atributo.getJavaType().getTypeName() + " [" + atributo.isAssociation() + "]" );
+		}
+			
+	}
+	
+	*/
 
 
 	// 1. Usar CriteriaBuilder para crear un CriteriaQuery que retorne la entidad esperada

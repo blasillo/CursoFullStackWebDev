@@ -48,7 +48,6 @@ public class SalasRepositorioImpl implements PersonalizadoSalasRepositorio {
 		Predicate p1 = salaRoot.get("salaId").in(subconsulta).not();
 		
 		// TODO
-		//Predicate p2 = builder.greaterThan(salaRoot.get("capacidad"), minCapacidad) ;
 		Predicate  p2 = null;
 		
 		Predicate condicion = builder.and( p1, p2 );
